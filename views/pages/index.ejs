@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Salut</title>
+        <link rel="stylesheet" href="/assets/semantic/semantic.min.css" />
+    </head>
+    <body>       
+         <!-- Page Contents -->
+        <div class="pusher">
+            <%- include('header.ejs') %>
+            
+            <% if (!page) { page = 'accueil' } %>
+            <%- include('accueil.ejs') %>
+        
+            <%- include('footer.ejs') %>
+        </div>
+    </body>
+</html>

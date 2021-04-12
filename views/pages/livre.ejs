@@ -1,0 +1,54 @@
+<% if (!page) { page = 'livre' } %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Salut</title>
+        <link rel="stylesheet" href="/assets/semantic/semantic.min.css" />
+    </head>
+    <body>       
+         <!-- Page Contents -->
+        <div class="pusher">
+            <%- include('header.ejs', {page: page}) %>
+            
+            <div class="ui vertical stripe segment">
+                <div class="ui main text container">
+                    <form class="ui inverted form" action="" method="POST">
+                        <div class="field">
+                        <label>Surnom</label>
+                        <input type="text" name="name" id="name" placeholder="Surnom">
+                        </div>
+                        
+                        <div class="field">
+                            <label>Message</label>
+                            <textarea rows="2" name="message" id="message"></textarea>
+                        </div>
+
+                        <div class="field">
+                            <div class="ui checkbox">
+                                <input type="checkbox" tabindex="0" class="hidden">
+                                <label>seule ler canare peuve cliké la desu</label>
+                            </div>
+                        </div>
+
+                        <button class="ui button" type="submit">Envoyer</button>
+                    </form>
+
+
+                    <% doc.forEach( function(entry) { %>
+                    <div class="ui message">
+                        <div class="header">
+                            <%= entry.name %>
+                        </div>
+                        <i><%= entry.createdAt %></i>
+                        <p><%= entry.message %></p>
+                    </div>
+                    <% } ); %>
+
+                </div>
+
+            </div>
+        
+            <%- include('footer.ejs') %>
+        </div>
+    </body>
+</html>
