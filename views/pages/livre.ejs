@@ -34,7 +34,7 @@
                     </form>
 
 
-                    <% doc.forEach( function(entry) { %>
+                    <% if (doc) { doc.forEach( function(entry) { %>
                     <div class="ui message">
                         <div class="header">
                             <%= entry.name %>
@@ -42,7 +42,7 @@
                         <i><%= entry.createdAt %></i>
                         <p><%= entry.message %></p>
                     </div>
-                    <% } ); %>
+                    <% } ); } %>
 
                 </div>
 
